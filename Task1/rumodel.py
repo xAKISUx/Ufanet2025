@@ -9,6 +9,8 @@ import numpy as np
 class CLIP:
     def __init__(self, model_name:str="ruclip-vit-base-patch32-384", dimension:int=512) -> None:
         self.imgs_srcs= None
+        #модель была скачана https://huggingface.co/ai-forever/ruclip-vit-base-patch32-384/tree/main
+        #все файлы модели были сохранены в папке rumodels
         self.model = ruclip.CLIP.from_pretrained("./rumodels")
         self.preprocess = ruclip.RuCLIPProcessor.from_pretrained("./rumodels")
         self.model.to("cuda")
